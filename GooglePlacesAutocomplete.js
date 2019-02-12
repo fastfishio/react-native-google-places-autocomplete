@@ -283,6 +283,7 @@ export default class GooglePlacesAutocomplete extends Component {
         key: this.props.query.key,
         placeid: rowData.place_id,
         language: this.props.query.language,
+        ...this.props.GooglePlacesDetailsQuery,
       }));
 
       if (this.props.query.origin !== null) {
@@ -742,6 +743,7 @@ GooglePlacesAutocomplete.propTypes = {
   onTimeout: PropTypes.func,
   query: PropTypes.object,
   GoogleReverseGeocodingQuery: PropTypes.object,
+  GooglePlacesDetailsQuery: PropTypes.object,
   GooglePlacesSearchQuery: PropTypes.object,
   styles: PropTypes.object,
   textInputProps: PropTypes.object,
@@ -791,6 +793,7 @@ GooglePlacesAutocomplete.defaultProps = {
     types: 'geocode',
   },
   GoogleReverseGeocodingQuery: {},
+  GooglePlacesDetailsQuery: {},
   GooglePlacesSearchQuery: {
     rankby: 'distance',
     types: 'food',
